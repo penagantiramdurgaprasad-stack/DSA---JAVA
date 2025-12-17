@@ -10,6 +10,9 @@ public class RemoveDuplicate {
     }
 
     private static int[] removeDuplicate(int[] arr) {
+        if(arr.length < 2){
+            throw new IllegalArgumentException("array length should be greater than 2");
+        }
         int count = 1,j = 1;
         while(j < arr.length){
             if(arr[j] != arr[j-1]){

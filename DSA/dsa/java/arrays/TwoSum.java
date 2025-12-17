@@ -26,6 +26,9 @@ public class TwoSum {
     }
 
     private static int[] twoSumPairsHash(int[] arrays, int target) {
+        if(arrays.length < 2){
+            throw new IllegalArgumentException("array length should be greater than 2");
+        }
         int i = 0,j = arrays.length-1;
         while(j< arrays.length){
             if(arrays[i] + arrays[j] == target){
@@ -40,6 +43,9 @@ public class TwoSum {
     }
 
     private static int[] twoSumPairs(int[] arrays, int target) {
+        if(arrays.length < 2){
+            throw new IllegalArgumentException("array length should be greater than 2");
+        }
         Map<Integer,Integer> map = new HashMap<>();
         for(int i = 0;i<arrays.length;i++){
             int remain = target - arrays[i];

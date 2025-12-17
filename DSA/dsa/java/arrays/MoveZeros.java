@@ -6,6 +6,9 @@ public class MoveZeros {
     public static void main(String[] args) {
         // Same like removeDuplicates moveZeros uses same technique so two pointers are used.
         int[] arr = {0,1,0,3,12};
+        if(arr.length < 2){
+            throw new IllegalArgumentException("array length should be greater than 2");
+        }
         int count = 0;
         for(int i = 0;i < arr.length;i++){
             if(arr[i] != 0){
