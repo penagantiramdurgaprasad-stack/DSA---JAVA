@@ -26,4 +26,3 @@ This folder contains String based data structures and algorithm problems commonl
 - Trapping Rain water
 - Dutch National Flag
 - Minimum Difference Pair
-- Merge Two Sorted Arrays
