@@ -1,5 +1,5 @@
 # Two Pointers - DSA (Java)
-This folder contains String based data structures and algorithm problems commonly asked in interviews.
+This folder contains Two Pointers based data structures and algorithm problems commonly asked in interviews.
 
 # When to Use
 - Sorted Arrays and Strings
