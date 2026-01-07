@@ -25,7 +25,7 @@ public class TwoSum {
         System.out.println(Arrays.toString(twoSumPairsHash(arrays,target))); //If arrays is unsorted-HashMap
     }
 
-    private static int[] twoSumPairsHash(int[] arrays, int target) {
+    private static int[] twoSumPairs(int[] arrays, int target) {
         if(arrays.length < 2){
             throw new IllegalArgumentException("array length should be greater than 2");
         }
@@ -42,7 +42,7 @@ public class TwoSum {
         return new int[]{-1,-1};
     }
 
-    private static int[] twoSumPairs(int[] arrays, int target) {
+    private static int[] twoSumPairsHash(int[] arrays, int target) {
         if(arrays.length < 2){
             throw new IllegalArgumentException("array length should be greater than 2");
         }

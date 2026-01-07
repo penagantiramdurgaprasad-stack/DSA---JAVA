@@ -33,7 +33,7 @@ public class ThreeSum {
                         left++;
                     }
                     while(left<right && nums[right] == nums[right+1]){
-                        left++;
+                        right --;
                     }
                 }
             }

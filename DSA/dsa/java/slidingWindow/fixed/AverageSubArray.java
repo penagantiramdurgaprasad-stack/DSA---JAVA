@@ -1,8 +1,8 @@
-package dsa.java.slidingWindow;
+package dsa.java.slidingWindow.fixed;
 
 public class AverageSubArray {
     public static void main(String[] args) {
-        int[] arr = {1,12,-5,-6,50,3};
+        int[] arr = {1,12,-5};
         int k = 4;
         System.out.println(avgMaxSub(arr,k));
     }
@@ -13,13 +13,15 @@ public class AverageSubArray {
         }
         double max =  Double.MIN_VALUE;
         int sum = 0;
-        for(int i = 0;i< arr.length;i++){
+        for(int i = 0;i<k;i++){
             sum += arr[i];
-           if(i >= k-1){
+        }
+        max = (double)sum/k;
+        for(int i = k;i< arr.length;i++){
+            sum += arr[i]-arr[i-k];
                double maxValue = (double)sum/k;
                max =  Math.max(max,maxValue);
-               sum -= arr[i-k+1];
-           }
+
         }
         return max;
     }

@@ -1,4 +1,4 @@
-package dsa.java.slidingWindow;
+package dsa.java.slidingWindow.fixed;
 
 public class MaxSubArray {
     public static void main(String[] args) {
@@ -8,16 +8,17 @@ public class MaxSubArray {
     }
 
     private static int maxSubArraySum(int[] arr,int k) {
-        if(arr == null || arr.length < 3){
+        if(arr == null || arr.length < k){
             throw new IllegalArgumentException("Array is Length is less than 3");
         }
         int max = Integer.MIN_VALUE,sum = 0;
-        for(int i = 0;i<arr.length;i++){
-                sum += arr[i];
-            if(i >= k-1){
+        for(int i = 0;i<k;i++){
+            sum += arr[i];
+        }
+        max = sum;
+        for(int i = k;i<arr.length;i++){
+                sum += arr[i] - arr[i-k];
                 max = Math.max(max,sum);
-                sum -= arr[i-k+1];
-            }
         }
         return max;
     }

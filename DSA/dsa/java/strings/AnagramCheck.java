@@ -13,10 +13,16 @@ public class AnagramCheck {
             throw new IllegalArgumentException("Not anagrams");
         }
         for(int i = 0;i< str1.length();i++){
-            map.put(str1.charAt(i),1);
+            map.put(str1.charAt(i),map.getOrDefault(str1.charAt(i),0)+1);
         }
         for(int i = 0;i< str1.length();i++){
-            if(!map.containsKey(t.charAt(i))){
+            if(!map.containsKey(t.charAt(i)) || map.get(t.charAt(i)) == 0){
+                throw new IllegalArgumentException("Strings are not anagrams");
+            }
+            map.put(t.charAt(i), map.get(t.charAt(i)) - 1);
+        }
+        for(int count : map.values()){
+            if(count != 0){
                 throw new IllegalArgumentException("Strings are not anagrams");
             }
         }
